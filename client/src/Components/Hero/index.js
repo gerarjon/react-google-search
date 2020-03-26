@@ -3,7 +3,7 @@ import "./style.css";
 
 const Hero = () => {
     return(
-        <div className="section">
+        <div className="section hero">
             <div className="row">
                 <div className="col s12 m10 offset-m1 center-align">
                     <h3>(React) Google Books Search</h3>
