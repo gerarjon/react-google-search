@@ -14,7 +14,7 @@ const Navbar = () => {
               className="brand-logo">
               Google Books 
             </Link>
-            <ul class="right hide-on-med-and-down">
+            <ul className="right hide-on-med-and-down">
               <li>
                 <Link to="/">Search</Link>
               </li>

@@ -8,11 +8,26 @@ const Searchbar = (props) => {
             <form>
                 <div className="row">
                     <div className="input-field">
-                        <input id="search" type="search" />
-                        <label for="search" className="active">Book</label>
+                        <input 
+                            id="search" 
+                            type="search" 
+                            name="search" 
+                            value={props.search} 
+                            onChange={props.handleInputChange} />
+                        <label 
+                            htmlFor="search" 
+                            className="active">
+                            Book
+                        </label>
                     </div>
                     <div className="right-align">
-                        <button className="btn waves-effect waves-light" type="submit" name="action">Submit</button>
+                        <button 
+                            className="btn waves-effect waves-light" 
+                            type="submit" 
+                            name="action"
+                            onClick={props.handleFormSubmit}>
+                            Submit
+                        </button>
                     </div>
                 </div>
             </form>
