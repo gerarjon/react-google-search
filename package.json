@@ -2,6 +2,7 @@
   "name": "react-google-search",
   "version": "1.0.0",
   "description": "Google Search API with react.js",
+  "proxy": "http://localhost:3000",
   "main": "server.js",
   "scripts": {
     "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
