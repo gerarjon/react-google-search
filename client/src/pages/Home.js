@@ -9,7 +9,8 @@ class Home extends Component {
     state = {
         search: '',
         results: [],
-        error: ''
+        error: '',
+        message: ''
     }
 
     handleInputChange = (event) => {
@@ -25,14 +26,29 @@ class Home extends Component {
                 }
                 this.setState({results: res.data.items, error: ''});
             })
-            .catch (err => this.setState({error: err.message}))
+            .catch (err => this.setState({ error: err.message }))
+    }
+
+    handleSave = (event) => {
+        event.preventDefault();
+        let savedBooks = this.state.results.filter( book => book.id === event.target.id)
+        savedBooks = savedBooks[0];
+        API.saveBook(savedBooks)
+            .then(
+                console.log('Your book is saved'),
+                this.setState({ message: 'Your books is saved'})
+            )
+            .catch( 
+                err => this.setState({ error: err.message })
+            )
+        console.log(savedBooks)
     }
 
     render() {
         return(
             <Container>
                 <Searchbar handleInputChange={this.handleInputChange} handleFormSubmit={this.handleFormSubmit} />
-                <SearchResults results={this.state.results}/>
+                <SearchResults results={this.state.results} handleSave={this.handleSave}/>
             </Container>
         )
     }

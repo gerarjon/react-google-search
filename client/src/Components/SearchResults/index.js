@@ -8,20 +8,26 @@ const SearchResults = (props) => {
       <div className="row">
         <ul>
           {props.results.map(result => (
-            <li key='result' className="row">
+            <li key={result.id} className="row">
               <div className="row">
+                {/* Title  */}
                 <span className="book-title">{result.volumeInfo.title}</span>
                 <span className="right button-group">
+                    {/* View Button  */}
                     <a className="waves-effect waves-light btn-small" href={result.volumeInfo.previewLink} target="_blank" rel="noopener noreferrer">View</a>
-                    <button className="waves-effect waves-light btn-small" type="submit">Save</button>
+                    {/* Save Button  */}
+                    <button className="waves-effect waves-light btn-small save-button" id={result.id} onClick={(event) => props.handleSave(event)} type="submit">Save</button>
                 </span>
               </div>
+              {/* Author  */}
               <h6>Author(s): {result.volumeInfo.authors}</h6>
               <div className="row">
                 {result.volumeInfo.imageLinks === undefined ? 
-                  <div className="no-image col">No image available</div> :
+                  // Book Image 
+                  <div className="no-image col m2">No image available</div> :
                   <img className={"col m2"} alt="Book Cover" src={result.volumeInfo.imageLinks.thumbnail} />
                 }
+                {/* Book Description  */}
                 <p className="col m10">{result.volumeInfo.description === undefined ? "No description available" : result.volumeInfo.description}</p>
               </div>
             </li>

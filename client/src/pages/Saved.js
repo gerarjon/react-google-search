@@ -9,20 +9,19 @@ class Saved extends Component {
     };
 
     componentDidMount() {
-        this.loadBooks();
-        console.log(this.state.books)
-    }
-    
-    loadBooks() {
         API.getBooks()
-        .then(res => this.setState({ books: res.data}))
-        .catch(err => console.log(err))
+            .then(res => this.setState({books: res.data}))
+            .catch(err => console.log(err))
     }
 
     render() {
         return(
             <Container>
-                {this.state.books}
+                <ul>
+                    {this.state.books.map( book => 
+                        <li>{book.title}</li>
+                    )}
+                </ul>
 
             </Container>
         )
