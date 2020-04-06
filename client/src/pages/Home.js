@@ -35,8 +35,8 @@ class Home extends Component {
         savedBooks = savedBooks[0];
         API.saveBook(savedBooks)
             .then(
-                console.log('Your book is saved'),
-                this.setState({ message: 'Your books is saved'})
+                this.setState({ message: 'Your book is saved'}),
+                console.log(this.message)
             )
             .catch( 
                 err => this.setState({ error: err.message })
