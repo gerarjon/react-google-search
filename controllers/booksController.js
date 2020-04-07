@@ -10,9 +10,15 @@ module.exports = {
   },
   findById: function(req, res) {
     db.BookModel
-      .findById(res.params.id)
+      .findById(req.params.id)
       .catch(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err))
+  },
+  create: function(req, res) {
+    db.BookModel
+      .create(req.body)
+      .then(dbModel => res.json(dbModel))
+      .catch(err => res.status(422).json(err));
   },
   remove: function(req, res) {
     db.BookModel

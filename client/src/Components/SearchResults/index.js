@@ -16,7 +16,7 @@ const SearchResults = (props) => {
                     {/* View Button  */}
                     <a className="waves-effect waves-light btn-small" href={result.volumeInfo.previewLink} target="_blank" rel="noopener noreferrer">View</a>
                     {/* Save Button  */}
-                    <button className="waves-effect waves-light btn-small save-button" id={result.id} onClick={(event) => props.handleSave(event)} type="submit">Save</button>
+                    <button className="waves-effect waves-light btn-small save-button" id={result.id} onClick={(event) => props.handleSave(event)} >Save</button>
                 </span>
               </div>
               {/* Author  */}

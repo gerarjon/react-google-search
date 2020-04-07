@@ -10,7 +10,7 @@ class Home extends Component {
         search: '',
         results: [],
         error: '',
-        message: ''
+        message: 'Your book is saved'
     }
 
     handleInputChange = (event) => {
@@ -31,17 +31,24 @@ class Home extends Component {
 
     handleSave = (event) => {
         event.preventDefault();
-        let savedBooks = this.state.results.filter( book => book.id === event.target.id)
+        let savedBooks = this.state.results.filter( book => book.id === event.target.id);
         savedBooks = savedBooks[0];
-        API.saveBook(savedBooks)
+        savedBooks = {
+            title: savedBooks.volumeInfo.title,
+            authors: savedBooks.volumeInfo.authors,
+            description: savedBooks.volumeInfo.description,
+            image: savedBooks.volumeInfo.imageLinks.thumbnail,
+            link: savedBooks.volumeInfo.previewLink,
+        };
+        API.saveBook({savedBooks})
             .then(
-                this.setState({ message: 'Your book is saved'}),
-                console.log(this.message)
+                console.log(this.state.message),
+                console.log(savedBooks)
             )
             .catch( 
                 err => this.setState({ error: err.message })
             )
-        console.log(savedBooks)
+            
     }
 
     render() {
