@@ -15,9 +15,10 @@ class Saved extends Component {
             .catch(err => console.log(err))
     }
 
-    handleDelete(event) {
-        event.preventDefault();
-        console.log('hello')
+    handleDelete = id => {
+        API.deleteBook(id)
+            .then (res => this.componentDidMount())
+            .catch(err =>console.log(err));
     }
 
     render() {
