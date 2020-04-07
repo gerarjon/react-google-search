@@ -1,10 +1,13 @@
 const express = require("express");
-const path = require("path");
 const mongoose = require("mongoose");
 const PORT = process.env.PORT || 3001;
 const bodyParser = require('body-parser');
 const routes = require('./routes');
 const app = express();
+
+// bodyParser, parses the request body to be a readable json format
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
 
 // Serve up static assets (usually on heroku)
 if (process.env.NODE_ENV === "production") {
@@ -21,11 +24,6 @@ mongoose.connect(mongoDB,
     useFindAndModify: false
   });
 
-
-// bodyParser, parses the request body to be a readable json format
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use(bodyParser.json());
-
 //Get the default connection
 const db = mongoose.connection;
 
@@ -37,6 +35,7 @@ db.on('error', console.error.bind(console, 'MongoDB connection error:'));
 // Add routes, both API and view
 app.use(routes)
 
+// Start the API server
 app.listen(PORT, function() {
   console.log(`🌎 ==> API server now on port ${PORT}!`);
 });
