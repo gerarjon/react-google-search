@@ -29,18 +29,16 @@ class Home extends Component {
             .catch (err => this.setState({ error: err.message }))
     }
 
-    handleSave = (event) => {
-        event.preventDefault();
-        let savedBooks = this.state.results.filter( book => book.id === event.target.id);
+    handleSave = id => {
+        let savedBooks = this.state.results.filter( book => book.id === id);
         savedBooks = savedBooks[0];
-        savedBooks = {
+        API.saveBook({
             title: savedBooks.volumeInfo.title,
             authors: savedBooks.volumeInfo.authors,
             description: savedBooks.volumeInfo.description,
             image: savedBooks.volumeInfo.imageLinks.thumbnail,
-            link: savedBooks.volumeInfo.previewLink,
-        };
-        API.saveBook({savedBooks})
+            link: savedBooks.volumeInfo.previewLink
+        })
             .then(
                 console.log(this.state.message),
                 console.log(savedBooks)

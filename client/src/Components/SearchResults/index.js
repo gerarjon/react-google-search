@@ -17,11 +17,17 @@ const SearchResults = (props) => {
                       {/* View Button  */}
                       <a className="waves-effect waves-light btn-small" href={result.volumeInfo.previewLink} target="_blank" rel="noopener noreferrer">View</a>
                       {/* Save Button  */}
-                      <button className="waves-effect waves-light btn-small save-button" id={result.id} onClick={(event) => props.handleSave(event)} >Save</button>
+                      <button 
+                        className="waves-effect waves-light btn-small save-button" 
+                        id={result.id} 
+                        onClick={() => props.handleSave(result.id)} 
+                      >
+                        Save
+                      </button>
                   </span>
                 </div>
                 {/* Author  */}
-                <h6>Author(s): {result.volumeInfo.authors}</h6>
+                <h6>Author(s): {result.volumeInfo.authors.join(", ")}</h6>
                 <div className="row">
                   {result.volumeInfo.imageLinks === undefined ? 
                     // Book Image 
