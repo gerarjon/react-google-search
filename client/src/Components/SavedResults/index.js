@@ -15,9 +15,22 @@ const SavedResults = (props) => {
                   <span className="book-title">{result.title}</span>
                   <span className="right button-group">
                       {/* View Button  */}
-                      <a className="waves-effect waves-light btn-small" href={result.link} target="_blank" rel="noopener noreferrer">View</a>
+                      <a 
+                        className="waves-effect waves-light btn-small light-blue darken-4" 
+                        href={result.link} 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                      >
+                        View
+                      </a>
                       {/* Save Button  */}
-                      <button className="waves-effect waves-light btn-small save-button" id={result._id} onClick={() => props.handleDelete(result._id)} type="submit">Delete</button>
+                      <button 
+                        className="waves-effect waves-light btn-small save-button red darken-4" 
+                        id={result._id} 
+                        onClick={() => props.handleDelete(result._id)} 
+                      >
+                          Delete
+                      </button>
                   </span>
                 </div>
                 {/* Author  */}

@@ -5,8 +5,8 @@ const Searchbar = (props) => {
     return(
         <div className="row">
             <h5>Book Search</h5>
-            <form>
-                <div className="row">
+            <div className="row">
+                <form>
                     <div className="input-field">
                         <input 
                             id="search" 
@@ -29,8 +29,8 @@ const Searchbar = (props) => {
                             Submit
                         </button>
                     </div>
-                </div>
-            </form>
+                </form>
+            </div>
         </div>
     )
 }

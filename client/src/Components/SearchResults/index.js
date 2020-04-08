@@ -15,10 +15,14 @@ const SearchResults = (props) => {
                   <span className="book-title">{result.volumeInfo.title}</span>
                   <span className="right button-group">
                       {/* View Button  */}
-                      <a className="waves-effect waves-light btn-small" href={result.volumeInfo.previewLink} target="_blank" rel="noopener noreferrer">View</a>
+                      <a 
+                        className="waves-effect waves-light btn-small light-blue darken-4" 
+                        href={result.volumeInfo.previewLink} 
+                        target="_blank" 
+                        rel="noopener noreferrer">View</a>
                       {/* Save Button  */}
                       <button 
-                        className="waves-effect waves-light btn-small save-button" 
+                        className="waves-effect waves-light btn-small save-button green darken-4" 
                         id={result.id} 
                         onClick={() => props.handleSave(result.id)} 
                       >
