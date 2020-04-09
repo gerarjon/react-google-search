@@ -19,7 +19,7 @@ class Navbar extends Component {
               <Link 
                 to="/"
                 className="brand-logo">
-                <i class="fab fa-react"></i> Google Books 
+                <i className="fab fa-react"></i> Google Books 
               </Link>
               <a 
                 href="!#"
