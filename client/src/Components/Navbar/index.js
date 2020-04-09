@@ -14,12 +14,12 @@ class Navbar extends Component {
     return (
       <header>
         <div className="navbar-fixed">
-          <nav>
+          <nav className="white">
             <div className="nav-wrapper container">
               <Link 
                 to="/"
                 className="brand-logo">
-                Google Books 
+                <i class="fab fa-react"></i> Google Books 
               </Link>
               <a 
                 href="!#"

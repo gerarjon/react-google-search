@@ -36,7 +36,7 @@ const SavedResults = (props) => {
                 {/* Author  */}
                 <h6>Author(s): {result.authors}</h6>
                 <div className="row">
-                  {result.image === undefined ? 
+                  {result.image === "" ? 
                     // Book Image 
                     <div className="no-image col m2">No image available</div> :
                     <img className={"col m2"} alt="Book Cover" src={result.image} />

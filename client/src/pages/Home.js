@@ -32,11 +32,17 @@ class Home extends Component {
     handleSave = id => {
         let savedBooks = this.state.results.filter( book => book.id === id);
         savedBooks = savedBooks[0];
+        let image = savedBooks.volumeInfo.imageLinks
+        if (!image) {
+            image = "";
+        } else {
+            image = savedBooks.volumeInfo.imageLinks.smallThumbnail;
+        }
         API.saveBook({
             title: savedBooks.volumeInfo.title,
             authors: savedBooks.volumeInfo.authors,
             description: savedBooks.volumeInfo.description,
-            image: savedBooks.volumeInfo.imageLinks.smallThumbnail,
+            image: image,
             link: savedBooks.volumeInfo.previewLink
         })
             .then(

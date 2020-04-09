@@ -6,8 +6,8 @@ const Hero = () => {
         <div className="section hero">
             <div className="row">
                 <div className="col s12 m10 offset-m1 center-align">
-                    <h3>(React) Google Books Search</h3>
-                    <h5>Search for and Save Books of Interest</h5>
+                    <h3><i class="fab fa-react"></i> Google Books Search</h3>
+                    <h5>Search for and Save Books</h5>
                 </div>
             </div>
         </div>
