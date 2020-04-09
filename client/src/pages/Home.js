@@ -36,7 +36,7 @@ class Home extends Component {
             title: savedBooks.volumeInfo.title,
             authors: savedBooks.volumeInfo.authors,
             description: savedBooks.volumeInfo.description,
-            image: savedBooks.volumeInfo.imageLinks.thumbnail,
+            image: savedBooks.volumeInfo.imageLinks.smallThumbnail,
             link: savedBooks.volumeInfo.previewLink
         })
             .then(

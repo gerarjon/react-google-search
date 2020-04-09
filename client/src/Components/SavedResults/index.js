@@ -4,7 +4,7 @@ import './style.css';
 const SavedResults = (props) => {
   return(
     <div>
-      <h5>Results</h5>
+      <h4>Saved Books</h4>
       <div className="row">
         <ul>
           {props.results.map(result => (
