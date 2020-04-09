@@ -4,7 +4,7 @@ import './style.css';
 const Searchbar = (props) => {
     return(
         <div className="row">
-            <h5>Book Search</h5>
+            <h6>Search for a Book</h6>
             <div className="row">
                 <form>
                     <div className="input-field">
@@ -17,7 +17,7 @@ const Searchbar = (props) => {
                         <label 
                             htmlFor="search" 
                             className="active">
-                            Book
+                            Book Title
                         </label>
                     </div>
                     <div className="right-align">

@@ -4,7 +4,7 @@ import './style.css';
 const SavedResults = (props) => {
   return(
     <div>
-      <h4>Saved Books</h4>
+      <h6>Saved Books</h6>
       <div className="row">
         <ul>
           {props.results.map(result => (
@@ -39,10 +39,10 @@ const SavedResults = (props) => {
                   {result.image === "" ? 
                     // Book Image 
                     <div className="no-image col m2">No image available</div> :
-                    <img className={"col m2"} alt="Book Cover" src={result.image} />
+                    <img className={"col m1"} alt="Book Cover" src={result.image} />
                   }
                   {/* Book Description  */}
-                  <p className="col m10">{result.description === undefined ? "No description available" : result.description}</p>
+                  <p className="col m11">{result.description === undefined ? "No description available" : result.description}</p>
                 </div>
               </div>
             </li>

@@ -3,6 +3,12 @@
 }
 
 nav .brand-logo,
-nav ul li a{
+nav ul li a,
+.sidenav-trigger{
   color:#212121;
 }
+
+.brand-logo {
+  font-size: 1.7rem!important;
+}
+
