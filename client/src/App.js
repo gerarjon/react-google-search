@@ -4,10 +4,10 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import "./App.css";
 import Navbar from "./Components/Navbar";
 import Hero from "./Components/Hero";
-import Home from "./Pages/Home";
 import Saved from "./Pages/Saved";
 import Footer from "./Components/Footer";
 import NoMatch from "./Pages/NoMatch";
+import Home from "./Pages/Home";
 
 class App extends Component {
   render() {
