@@ -32,7 +32,6 @@
     "materialize-css": "^1.0.0-rc.2",
     "mongoose": "^5.9.6",
     "react": "^16.13.0",
-    "react-router-dom": "^5.1.2",
-    "react-scripts": "^3.4.1"
+    "react-router-dom": "^5.1.2"
   }
 }
