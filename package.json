@@ -1,9 +1,9 @@
 {
   "name": "react-google-search",
   "version": "1.0.0",
-  "description": "Google Search API with react.js",
-  "proxy": "http://localhost:3001",
+  "description": "Google Search API with React",
   "main": "server.js",
+  "proxy": "http://localhost:3001",
   "scripts": {
     "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
     "start:prod": "node server.js",
@@ -13,9 +13,6 @@
     "install": "cd client && npm install",
     "build": "cd client && npm run build",
     "heroku-postbuild": "npm run build"
-  },
-  "engines": {
-    "node": "10.16.3"
   },
   "author": "",
   "license": "ISC",
@@ -30,7 +27,7 @@
     "express": "^4.16.3",
     "if-env": "^1.0.4",
     "materialize-css": "^1.0.0-rc.2",
-    "mongoose": "^5.9.6",
+    "mongoose": "^5.9.9",
     "react": "^16.13.0",
     "react-router-dom": "^5.1.2"
   }

@@ -1,3 +1,3 @@
-module.exports = {
-  BookModel: require("./data")
+module.exports =  {
+  BookModel: require('./data')
 }

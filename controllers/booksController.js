@@ -11,8 +11,8 @@ module.exports = {
   findById: function(req, res) {
     db.BookModel
       .findById(req.params.id)
-      .catch(dbModel => res.json(dbModel))
-      .catch(err => res.status(422).json(err))
+      .then(dbModel => res.json(dbModel))
+      .catch(err => res.status(422).json(err));
   },
   create: function(req, res) {
     db.BookModel

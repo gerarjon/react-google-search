@@ -1,12 +1,13 @@
 const express = require("express");
-const mongoose = require("mongoose");
+const path = require("path");
 const PORT = process.env.PORT || 3001;
+const app = express();
+const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const routes = require('./routes');
-const app = express();
 require('dotenv').config();
 
-// bodyParser, parses the request body to be a readable json format
+// Define middleware here, parses the request body to be a readable json format
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
@@ -33,11 +34,10 @@ db.once('open', () => console.log('connected to the database'));
 //Bind connection to error event (to get notification of connection errors)
 db.on('error', console.error.bind(console, 'MongoDB connection error:'));
 
-// Add routes, both API and view
+// Add Routes, both API and View
 app.use(routes)
 
-// Start the API server
+// Start the API Server
 app.listen(PORT, function() {
   console.log(`🌎 ==> API server now on port ${PORT}!`);
 });
-
